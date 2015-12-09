@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>psycho</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="bootstrap-v3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap-v3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+    <script src="build.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div></div>
+    <div class="row">
+      <div class="col-md-2 test-nav-l">
+        <span class="check done">已畢填</span>(1)第一題<br/>
+        <span class="check done">已填</span>(2)第二題<br/>
+        <span class="check undone">未填</span>(3)第三題<br/>
+
+      </div>
+      <div class="col-md-10 test-body">
+        <div class="test-body-title"><h3>(1)<b>第一題</b></h3></div>
+        <div class="test-vody-video"><video src="test-media/4.mpg" width="768" height="332"></video></div>
+        <br/>
+          <div class="test-body-des" style="border-left-color: #5bc0de;"><h4>
+            他能告訴你，他對他人的真正的感覺嗎？比如他心裡對父母有些生氣沒有表現出來，他能告訴你他的感覺。
+          </h4></div>
+          
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var $cover_time = $('.cover-time');
+	function updateTime(){
+		var dt = new Date();
+		$cover_time.html('本地時間：'+dt);
+	}
+	updateTime();
+	setInterval( updateTime , 1000);
+
+
+</script>

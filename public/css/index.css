@@ -1,0 +1,67 @@
+hr {
+	border:0; height:1px; background-color:#d4d4d4; margin-left: 0px !important;
+}
+.cover{
+	margin-top: 15%;
+	text-align: center;
+	font-family: '微軟正黑體';
+}
+.cover-title{
+	padding-left: 25%;
+	padding-right: 25%;
+}
+.cover-btn{
+	font-size: 24px;
+	padding: 7px 22px 7px 22px;
+}
+.cover-time{
+	margin-top: 250px;
+}
+.test-nav-l{
+	margin-top: 50px;
+	text-align: center;
+	padding: 25px 0px 35px 0px;
+	line-height: 2;
+	border-top: outset;
+	border-left: outset;
+	border-right: inset;
+	border-bottom: inset;
+	max-height: 600px;
+	overflow: scroll;
+}
+.check{
+	font-size: 10px;
+	padding: 5px;
+    margin-bottom: 3px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+.done{
+	color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.undone{
+	color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.test-body-title{
+	text-align: center;
+}
+.test-body{
+	margin-top: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+.test-body-des{
+	padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.nav-cell{
+	cursor: pointer;
+}
