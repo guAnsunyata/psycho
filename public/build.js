@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-	$nav = $('.test-nav-l');
+	$nav = $('.test-nav-l #nav-body');
 	$title = $('.test-body-title');
 	$video = $('.test-vody-video');
 	$des = $('.test-body-des');
@@ -9,22 +9,30 @@ $(document).ready(function(){
 		id: 0,
 		title: '第一題',
 		des: '他能邀請剛認識的人一起做些事，比如去打球或看電影嗎？',
-		videoURL: 'test-media/4.mpg',
+		videoURL: 'test-media/1.mp4',
 		answer: '',
 	},{
 		id: 1,
 		title: '第二題',
 		des: '當你不開心或難過時，他能做些事或說些話讓你心情好一點？',
-		videoURL: 'test-media/5.mpg',
+		videoURL: 'test-media/2.mp4',
+		answer: '',
+	},{
+		id: 2,
+		title: '第三題',
+		des: '他能讓你願意配合他嗎？比如他想看電影，他的說法或態度能讓你也願意看電影。',
+		videoURL: 'test-media/3.mp4',
 		answer: '',
 	}];
+	
 	var switcher = new test_switcher(data);
 	function append_nav(data){
 		data.forEach(function(e){
-			$nav.append("<span class='nav-cell' id='nav"+e.id+"'><span class='check undone'>未填</span>("+e.id+")"+e.title+"</span><br/>");
+			//$nav.append("<span class='nav-cell' id='nav"+e.id+"'><span class='check undone'>未填</span>("+e.id+")"+e.title+"</span><br/>");
+			$nav.append("<a id='nav"+e.id+"' class='list-group-item'><span class='check undone'>未填</span>("+e.id+")"+e.title+"</a>");
 			$('#nav'+e.id).click(function(){
-				console.log('11');
 				switcher._switch(e.id);
+				$(this).addClass('nav-avtive').siblings().removeClass('nav-avtive');
 			});
 		});
 	}
@@ -45,7 +53,7 @@ function test_switcher(data){ //耦合於data
 			$title.html(html);
 		},
 		appendDescription: function(content){
-			var html = "<h4>"+content+"</h4>";
+			var html = content;
 			$des.html(html);
 		},
 		appendVideoURL: function(content){
@@ -58,8 +66,14 @@ function test_switcher(data){ //耦合於data
 			this.appendDescription(data[id].des);
 			this.appendVideoURL(data[id].videoURL);
 		},
+		getCurrent: function getCurrent(){
+			return this.current_test
+		},
 		setAnswer: function setAnswer(id,ans){
 			data[id].answer = ans;
+		},
+		printResult: function printResult(){
+			return this.data.answer
 		},
 		getSource: function getSource(){
 			return data

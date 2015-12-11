@@ -21,12 +21,10 @@ hr {
 	margin-top: 50px;
 	text-align: center;
 	padding: 25px 0px 35px 0px;
-	line-height: 2;
-	border-top: outset;
-	border-left: outset;
-	border-right: inset;
-	border-bottom: inset;
-	max-height: 600px;
+	
+}
+.test-nav-l #nav-body{
+	max-height: 550px;
 	overflow: scroll;
 }
 .check{
@@ -56,12 +54,13 @@ hr {
 	text-align: center;
 }
 .test-body-des{
-	padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
+	padding-left: 20px;
+	text-align: left;
+	font-size: 18px;
 }
 .nav-cell{
 	cursor: pointer;
+}
+.nav-avtive{
+	background-color: #ddd;
 }
