@@ -18,7 +18,7 @@ hr {
 	margin-top: 250px;
 }
 .test-nav-l{
-	margin-top: 50px;
+	margin-top: 25px;
 	text-align: center;
 	padding: 25px 0px 35px 0px;
 	
@@ -48,7 +48,7 @@ hr {
 	text-align: center;
 }
 .test-body{
-	margin-top: 40px;
+	margin-top: 30px;
 	padding-left: 20px;
 	padding-right: 20px;
 	text-align: center;
@@ -63,4 +63,7 @@ hr {
 }
 .nav-avtive{
 	background-color: #ddd;
+}
+.nav-avtive:hover{
+	background-color: #ddd !important;
 }
