@@ -1,6 +1,9 @@
 hr {
 	border:0; height:1px; background-color:#d4d4d4; margin-left: 0px !important;
 }
+button{
+	border-radius: 5px;
+}
 .cover{
 	margin-top: 15%;
 	text-align: center;
@@ -39,10 +42,16 @@ hr {
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
+.done:before{
+    content:"已填";
+}
 .undone{
 	color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
+}
+.undone:before{
+	content:"未填";
 }
 .test-body-title{
 	text-align: center;
@@ -66,4 +75,8 @@ hr {
 }
 .nav-avtive:hover{
 	background-color: #ddd !important;
+}
+.result-table tr{
+	margin-left: 8px;
+	margin-right: 8px;
 }

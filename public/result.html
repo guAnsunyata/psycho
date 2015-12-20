@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>psycho</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="bootstrap-v3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap-v3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div style="margin: 5% 15% 0 15%">
+	<div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">測驗結果</div>
+      <div class="panel-body" style="padding: 32px;">
+        <p>恭喜完成測驗，請依施測人員指示，確認問題完成後，按下按鈕送出至雲端網頁。</p>
+        <button class='btn btn-primary submit-btn' style='font-size: 20px; padding: 5px 12px 5px 12px;'>儲存結果</button>
+      </div>
+
+      <!-- Table -->
+      <div style="padding: 0px 32px 0px 32px;">
+      <table class="table result-table">
+        <thead>
+          <tr>
+            <th style="text-align: center;">#題號</th>
+            <th>題目</th>
+            <th>作答</th>
+            <th>狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+	if(!location.href.split("?")[1]){
+		//
+		if(location.href.split("#")[1]=='A'){
+			var data = JSON.parse(sessionStorage.getItem('psycho-Answer-storage-A'));
+		}else if(location.href.split("#")[1]=='B'){
+			var data = JSON.parse(sessionStorage.getItem('psycho-Answer-storage-B'));
+		}
+	}else{
+		//
+	}
+	$result_table_tbody = $('.result-table tbody');
+	(function show_result(){
+		data.forEach(function(d){
+			$result_table_tbody.append("<tr><td>"+d.id+"</td><td>"+d.des+"</td><td>"+d.answer+"</td><td>完成</td></tr>");
+		});
+	}());
+</script>
+</html>

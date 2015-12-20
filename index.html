@@ -31,6 +31,8 @@
       </div>
     </div>
     <div class="cover-time"></div>
+    <b>欲開啟一個全新的測驗請點選：</b><a id="cleanStorage" style="cursor: pointer; color: red"><b>清除資料</b></a>
+    </br>
   </div>
 
 
@@ -50,5 +52,11 @@ $(document).ready(function() {
 	$('#test1').click(function(){
 		location.href = 'public/test.html';
 	});
+
+  $('#cleanStorage').click(function(){
+    sessionStorage.clear();
+    alert('已清除資料，可以進行全新的測驗。');
+  });
+
 });
 </script>
