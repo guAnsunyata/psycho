@@ -4,6 +4,9 @@ hr {
 button{
 	border-radius: 5px;
 }
+body{
+	background-color: #FFFAED;
+}
 .cover{
 	margin-top: 15%;
 	text-align: center;
@@ -67,6 +70,12 @@ button{
 	text-align: left;
 	font-size: 18px;
 }
+.input_des{
+	font-weight: bolder;
+}
+.test-radio-span{
+	font-size: 22px;
+}
 .nav-cell{
 	cursor: pointer;
 }
@@ -77,6 +86,5 @@ button{
 	background-color: #ddd !important;
 }
 .result-table tr{
-	margin-left: 8px;
-	margin-right: 8px;
+
 }

@@ -7,6 +7,7 @@
 	<script src="bootstrap-v3.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="bootstrap-v3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
+  <script src="js/excellentexport.min.js"></script>
     <script src="build.js"></script>
 </head>
 
@@ -28,12 +29,33 @@
         <div class="test-body-video"><video controls src="test-media/4.mpg" width="852" height="361"></video></div>
         <br/>
           <div class="panel panel-info">
-              <div class="test-body-des panel-heading">Panel heading without title</div>
+              <div class="test-body-des panel-heading"></div>
               <div class="panel-body">
-                <div class="answer" id="a1" style="display: inline-block"><img height="60" src="./images/a1.png" style="margin-bottom: 5px;" /><br/>做到 0 ~ 2</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="answer" id="a2" style="display: inline-block"><img height="60" src="./images/a2.png" style="margin-bottom: 5px;" /><br/>做到 3 ~ 5</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="answer" id="a3" style="display: inline-block"><img height="60" src="./images/a3.png" style="margin-bottom: 5px;" /><br/>做到 6 ~ 8</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="answer" id="a4" style="display: inline-block"><img height="60" src="./images/a4.png" style="margin-bottom: 5px;" /><br/>做到 9 ~ 10</div>
+
+                <div class="answer_type2">
+                  <div class="answer" id="a1" style="display: inline-block"><img height="60" src="./images/a1.png" style="margin-bottom: 5px;" /><br/>做到 0 ~ 2</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="answer" id="a2" style="display: inline-block"><img height="60" src="./images/a2.png" style="margin-bottom: 5px;" /><br/>做到 3 ~ 5</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="answer" id="a3" style="display: inline-block"><img height="60" src="./images/a3.png" style="margin-bottom: 5px;" /><br/>做到 6 ~ 8</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="answer" id="a4" style="display: inline-block"><img height="60" src="./images/a4.png" style="margin-bottom: 5px;" /><br/>做到 9 ~ 10</div>
+                </div>
+
+                <div class="answer_type0">
+                  <div class="input-group" style="padding: 0% 35% 0% 35%">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default input_des" type="button"></button>
+                    </span>
+                    <input type="text" class="form-control input_id" id="">
+                  </div>
+                </div>
+
+                <div class="answer_type1">
+                  <div class="input-group" style="margin: 0 auto;">
+                  </div>
+                </div>
+
+                <div class="answer_type3">
+                </div>
+
               </div>
           </div>
           <div class="test-body-nav">
@@ -56,5 +78,33 @@
 	updateTime();
 	setInterval( updateTime , 1000);
 
+// $("#btnExport").click(function (e) {
+//     window.open('data:application/vnd.ms-excel,' + $('#dvData').html());
+//     e.preventDefault();
+// });
+
+$("#btnExport").click(function(e) {
+        //getting values of current time for generating the file name
+        var dt = new Date();
+        var day = dt.getDate();
+        var month = dt.getMonth() + 1;
+        var year = dt.getFullYear();
+        var hour = dt.getHours();
+        var mins = dt.getMinutes();
+        var postfix = day + "." + month + "." + year + "_" + hour + "." + mins;
+        //creating a temporary HTML link element (they support setting file names)
+        var a = document.createElement('a');
+        //getting data from our div that contains the HTML table
+        var data_type = 'data:application/vnd.ms-excel';
+        var table_div = document.getElementById('dvData');
+        var table_html = table_div.outerHTML.replace(/ /g, '%20');
+        a.href = data_type + ', ' + table_html;
+        //setting the file name
+        a.download = 'exported_table_' + postfix + '.xls';
+        //triggering the function
+        a.click();
+        //just in case, prevent default behaviour
+        e.preventDefault();
+    });
 
 </script>
